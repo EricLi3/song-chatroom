@@ -1,0 +1,24 @@
+/*
+All styles in this file will be applied to the entire application.
+as App parent of all of out components
+*/
+ 
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+
+*{
+  box-sizing: border-box;
+  font-family: 'QuickSand', sans-serif, Arial;
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+}
