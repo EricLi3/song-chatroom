@@ -10,8 +10,6 @@ import Reviews from './components/reviews/Reviews';
 import Playlist from './components/playlist/Playlist'; // import the Playlist component
 
 
-
-
 function App() {
 
   //useState returns array with current state element and Function to update it as an array.
