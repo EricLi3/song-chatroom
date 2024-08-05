@@ -7,6 +7,7 @@ import Home from './components/home/Home';
 import Header from './components/header/Header';
 import Trailer from './components/trailer/Trailer';
 import Reviews from './components/reviews/Reviews';
+import Favorite from './components/favorite/Favorite';
 // import Playlist from './components/playlist/Playlist'; // import the Playlist component
 
 
@@ -59,6 +60,9 @@ function App() {
   return (
     <div className="App">
       <Header/>
+      {/* ////////////////////////////////////////////////////////////////////////////////////////// */}
+
+      {/* ////////////////////////////////////////////////////////////////////////////////////////// */}
       <Routes>
       <Route path="/" element={<Layout/>}>
           <Route path="/" element={<Home songs={songs} />}></Route>

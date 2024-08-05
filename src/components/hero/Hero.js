@@ -16,7 +16,13 @@ const Hero = ({ songs }) => {
         navigate(`/Reviews/${trackName}`);
     }
 
+    function favorites(trackName)
+    {
+        navigate(`/Favorite/${trackName}`);
+    }
+
     return (
+        
         <div className='song-carousel-container'>
             <Carousel indicators={false} navButtonsAlwaysVisible  >
                 {
@@ -48,6 +54,11 @@ const Hero = ({ songs }) => {
                                         <div className="song-review-button-container">
                                             <Button variant ="info" onClick={() => reviews(song.trackName)} >Reviews</Button>
                                         </div>
+
+                                        <div className="song-review-button-container">
+                                            <Button variant ="info" onClick={() => favorites(song.trackName)} >Favorites</Button>
+                                        </div>
+                                        
                                     </div>
                                         </div>
                                     </div>
