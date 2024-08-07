@@ -19,6 +19,9 @@ body{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: rgb(231, 118, 118);
+  background: linear-gradient(to right, #1487d3, #080808);
+  border-radius: 10px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for depth */
+  
   color: white;
 }

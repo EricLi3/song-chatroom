@@ -7,7 +7,9 @@ import Home from './components/home/Home';
 import Header from './components/header/Header';
 import Trailer from './components/trailer/Trailer';
 import Reviews from './components/reviews/Reviews';
-import Favorite from './components/favorite/Favorite';
+import ChatRoom from './components/chatRoom/ChatRoom';
+
+// import Favorite from './components/favorite/Favorite';
 // import Playlist from './components/playlist/Playlist'; // import the Playlist component
 
 
@@ -68,6 +70,7 @@ function App() {
           <Route path="/" element={<Home songs={songs} />}></Route>
           <Route path="/Trailer/:ytTrailerId" element={<Trailer/>}></Route>
           <Route path ="/Reviews/:trackName" element={<Reviews getSongData = {getSongData} song = {song} reviews = {reviews} setReviews = {setReviews}  />}></Route>
+          <Route path="/chat" element={<ChatRoom/>} />
           {/* <Route path="/playlist"> element={<Playlist songs={songs} />}</Route> */}
           {/* <Route path="*" element = {<NotFound/>}></Route> */}
       </Route>

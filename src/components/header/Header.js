@@ -22,7 +22,8 @@ return (
                         navbarScroll
                     >
                     <NavLink className ="nav-link" to="/">Home</NavLink>
-                    <NavLink className ="nav-link" to="/playlist">Playlist</NavLink>      
+                    <NavLink className ="nav-link" to="/playlist">Playlist</NavLink>
+                    <NavLink className ="nav-link" to="/chat">Chat Room</NavLink>      
                 </Nav>
                 <Button variant="outline-info" className="me-2">Login</Button>
                 <Button variant="outline-info">Register</Button>

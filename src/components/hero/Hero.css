@@ -84,6 +84,33 @@
 .h1{
     text-align: center;
 }
+.vevo-background {
+    background: linear-gradient(to right, #1487d3, #080808); /* Example gradient */
+    background-size: cover;
+    background-position: center;
+}
+
+.gridButtons {
+    height:0;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear, height 0.5s ease;
+}
+.card:hover .gridButtons {
+    visibility: visible;
+    opacity: 1;
+    height:40px;
+}
+.custom-text-field {
+        /* width:"60%"; */
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: aliceblue;
+    /* display: inline-block; */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    /* box-sizing: border-box; */
+}
 
 @media only screen and (max-width: 800px) {
     .song-detail{
@@ -92,4 +119,3 @@
         top:20px;
     }
 }
-
