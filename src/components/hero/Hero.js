@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Card } from 'react-bootstrap';
+import Select from 'react-select';
 import Greeting from '../greeting/Greeting';
 
 
@@ -42,13 +43,27 @@ const Hero = ({ songs }) => {
                 song.trackName.toLowerCase().includes(searchQuery.toLowerCase()) ||
                 song.artist_names.toLowerCase().includes(searchQuery.toLowerCase())
             );
-
+    
             if (songIndex !== -1) {
                 if (viewMode === 'carousel') {
-                    carouselRef.current.scrollToItem(songIndex);
-                } else {
-                    gridRefs.current[songIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    gridRefs.current[songIndex].style.border = '2px solid red'; // Highlight the song
+                    try{
+                        carouselRef.current.scrollToItem(songIndex);
+                    }
+                    catch (error){
+                        console.error('Error scrolling to the song:', error);
+                    }
+                    } else {
+                    const songElement = gridRefs.current[songIndex];
+                    if (songElement) {
+                        try {
+                            songElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            songElement.style.border = '2px solid red'; // Highlight the song
+                        } catch (error) {
+                            console.error('Error scrolling to or highlighting the song:', error);
+                        }
+                    } else {
+                        console.warn('Song element not found for index:', songIndex);
+                    }
                 }
             }
         }
@@ -70,18 +85,18 @@ const Hero = ({ songs }) => {
             </Button>
 
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                <TextField
-                    className="custom-text-field"
+            <TextField
+                className="custom-text-field"
 
-                    label="Search Songs"
-                    variant="outlined"
-                    value={searchQuery}
-                    onChange={handleSearchChange}
-                    onKeyPress={handleKeyPress}
-                    InputLabelProps={{ shrink: isFocused || searchQuery !== '', style: { textAlign: 'center', width: '100%' } }}
-                    style={{ margin: '20px 0', width: '800px' }}
-                />
-            </div>
+                label="Search Songs"
+                variant="outlined"
+                value={searchQuery}
+                onChange={handleSearchChange}
+                onKeyPress={handleKeyPress}
+                InputLabelProps={{ shrink: isFocused || searchQuery !== '', style: { textAlign: 'center', width: '100%' } }}
+                style={{ margin: '20px 0', width: '800px' }}
+            />
+        </div>
 
             {viewMode === 'carousel' ? (
                 <div>
